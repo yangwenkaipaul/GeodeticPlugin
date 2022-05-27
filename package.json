@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-geodetic",
+  "version": "1.0.0",
+  "description": "cordova-plugin-geodetic",
+  "cordova": {
+    "id": "cordova-plugin-geodetic",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "paul",
+  "license": "ISC"
+}

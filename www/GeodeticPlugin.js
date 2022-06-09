@@ -1,5 +1,9 @@
 var exec = require('cordova/exec');
 
-exports.coolMethod = function (arg0, success, error) {
-    exec(success, error, 'GeodeticPlugin', 'coolMethod', [arg0]);
-};
+const Geodetic = {
+    getDistance: function (inLat, inLng, outLng, outLng, success, error) {
+        exec(success, error, 'GeodeticPlugin', 'getDistance', [inLat, inLng, outLng, outLng]);
+    }
+}
+
+module.exports = Geodetic;

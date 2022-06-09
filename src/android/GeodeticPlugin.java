@@ -15,18 +15,19 @@ public class GeodeticPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("getDistance")) {
-            String message = args.getString(0);
-            this.getDistance(message, callbackContext);
+            try {
+                Double latitudeFrom = args.getDouble(0);
+                Double longitudeFrom = args.getDouble(1);
+                Double latitudeTo = args.getDouble(2);
+                Double longitudeTo = args.getDouble(3);
+                double distance = GlobalCoordinatesUtils.getDistance(longitudeFrom, latitudeFrom, longitudeTo, latitudeTo);
+                callbackContext.success(Double.toString(distance));
+            } catch (Exception e) {
+                callbackContext.error(e.getMessage());
+            }
             return true;
         }
         return false;
     }
 
-    private void getDistance(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
-        }
-    }
 }

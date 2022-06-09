@@ -5,8 +5,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
         
     <name>GeodeticPlugin</name>
-    <js-module name="GeodeticPlugin" src="www/GeodeticPlugin.js">
-        <clobbers target="GeodeticPlugin" />
+    <js-module name="geodetic" src="www/GeodeticPlugin.js">
+        <clobbers target="window.Geodetic" />
     </js-module>
 
     <platform name="android">

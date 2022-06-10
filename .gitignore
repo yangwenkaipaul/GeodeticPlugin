@@ -3,7 +3,6 @@ node_modules
 
 plugins
 platforms
-/www
 
 # local env files
 .env.local
